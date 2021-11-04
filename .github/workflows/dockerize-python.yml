@@ -1,8 +1,9 @@
-name: GitHub Actions Demo
+name: Docker Python Image
 on: [push]
 jobs:
   steps:
     runs-on:  
+      uses: actions/checkout@v2
       using: 'docker'
       image: 'Dockerfile'
       args:
