@@ -1,1 +1,7 @@
-docker
+on: [push]
+name: Deploy Docker Image
+jobs:
+  release:
+    runs-on:
+     using: 'docker'
+     image: 'Dockerfile'
