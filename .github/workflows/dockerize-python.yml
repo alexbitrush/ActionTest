@@ -1,1 +1,9 @@
-docker
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  steps:
+    runs-on:  
+      using: 'docker'
+      image: 'Dockerfile'
+      args:
+      - ${{ inputs.who-to-greet }}
