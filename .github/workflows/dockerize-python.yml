@@ -1,10 +1,9 @@
-name: Docker Python Image
 on: [push]
+name: Deploy Docker Image
 jobs:
-  steps:
-    runs-on:  
-      uses: actions/checkout@v2
-      using: 'docker'
-      image: 'Dockerfile'
-      args:
-      - ${{ inputs.who-to-greet }}
+  release:
+    runs-on:
+     using: 'docker'
+     image: 'Dockerfile'
+     args:
+     - ${{ inputs.who-to-greet }}
