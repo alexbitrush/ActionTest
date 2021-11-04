@@ -25,4 +25,15 @@ jobs:
         architecture: x64
     # Used to pull python distributions from actions/python-versions. Since there's a default, this is typically not supplied by the user.
         token: ${{ github.GITHUB_TOKEN  }}
+    - name: Cache
+      uses: actions/cache@v2.1.6
+      with:
+    # A list of files, directories, and wildcard patterns to cache and restore
+        path: ~/.npm
+    # An explicit key for restoring and saving the cache
+        key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+    # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
+        restore-keys: ${{ runner.os }}-docker-
+    # The chunk size used to split up large files during upload, in bytes
+        upload-chunk-size: 6M
 
