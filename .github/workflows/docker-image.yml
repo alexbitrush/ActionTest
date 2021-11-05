@@ -22,7 +22,7 @@ jobs:
     - name: Docker Build Image
       uses: docker/build-push-action@v2
       with:
-        context: ..
+        context: ./
         file: ./Dockerfile
-        run: docker build -f Dockerfile -t pyimage ..
+#         run: docker build -f Dockerfile -t pyimage ..
         path: true
