@@ -11,8 +11,7 @@ RUN apt-get update \
 RUN npm ci
 
 ARG NODE_ENV="production"
-ENV NODE_ENV="${NODE_ENV}" \
-    USER="node"
+ENV NODE_ENV="${NODE_ENV}"
 
 
 RUN if [ "${NODE_ENV}" != "development" ]; then \
